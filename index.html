@@ -1,0 +1,728 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beauty Queens — Cosmetics & Beauty</title>
+  <meta name="description" content="Clean, cruelty-free beauty. Shop skincare, makeup, and hair care with free shipping over $50." />
+  <meta property="og:title" content="Beauty Queens — Cosmetics & Beauty" />
+  <meta property="og:description" content="Clean, cruelty-free beauty products that perform." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Success/flash messages -->
+  <div id="flash" class="flash" role="status" aria-live="polite" hidden></div>
+
+  <!-- Announcement Bar -->
+  <div class="bar">
+    <p>Free shipping on orders over $50 • 15% off first order with code WELCOME15</p>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="Home">BeautyQueens</a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">☰</button>
+        <ul id="primary-menu" class="menu">
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#new">New</a></li>
+          <li><a href="#bestsellers">Best Sellers</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search">
+          <input id="searchInput" type="search" placeholder="Search products" aria-label="Search products" />
+          <button id="searchBtn" aria-label="Search">🔍</button>
+        </div>
+        <button id="openCartBtn" class="cart-btn" aria-label="Open cart">
+          🛒 <span id="cartCount" class="badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" role="region" aria-label="Hero">
+    <div class="hero-inner container">
+      <div class="hero-copy">
+        <h1>Glow starts here</h1>
+        <p>Clean, cruelty‑free essentials for skin that loves you back.</p>
+        <div class="hero-ctas">
+          <a href="#shop" class="btn btn-primary">Shop Now</a>
+          <a href="#bestsellers" class="btn btn-outline">Best Sellers</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1512203492609-8f9a9f4b3c47?q=80&w=1200&auto=format&fit=crop" alt="Beauty products on pastel background" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust / Features -->
+  <section class="features container">
+    <div class="feature">
+      <span>🚚</span>
+      <p>Free shipping $50+</p>
+    </div>
+    <div class="feature">
+      <span>🐰</span>
+      <p>Cruelty‑free</p>
+    </div>
+    <div class="feature">
+      <span>🔒</span>
+      <p>Secure checkout</p>
+    </div>
+    <div class="feature">
+      <span>🌿</span>
+      <p>Clean ingredients</p>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="shop" class="categories container">
+    <h2>Shop by category</h2>
+    <div class="grid grid-4">
+      <a class="category-card" data-filter="Skincare" href="#products">
+        <img src="https://images.unsplash.com/photo-1585238342028-4bbc243d3f5c?q=80&w=1200&auto=format&fit=crop" alt="Skincare" />
+        <div class="category-card__content">
+          <h3>Skincare</h3>
+          <p>Cleansers, serums, moisturizers</p>
+        </div>
+      </a>
+      <a class="category-card" data-filter="Makeup" href="#products">
+        <img src="https://images.unsplash.com/photo-1512207846876-9c58656721a8?q=80&w=1200&auto=format&fit=crop" alt="Makeup" />
+        <div class="category-card__content">
+          <h3>Makeup</h3>
+          <p>Lips, eyes, face</p>
+        </div>
+      </a>
+      <a class="category-card" data-filter="Hair" href="#products">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Hair" />
+        <div class="category-card__content">
+          <h3>Hair</h3>
+          <p>Nourishing care</p>
+        </div>
+      </a>
+      <a class="category-card" data-filter="Tools" href="#products">
+        <img src="https://images.unsplash.com/photo-1606042282015-9aa79c0a0a89?q=80&w=1200&auto=format&fit=crop" alt="Tools" />
+        <div class="category-card__content">
+          <h3>Tools</h3>
+          <p>Brushes & accessories</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- New Arrivals -->
+  <section id="new" class="container section-tight">
+    <h2>New arrivals</h2>
+    <div id="newGrid" class="grid grid-4 product-grid"></div>
+  </section>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="container banner-inner">
+      <div>
+        <h2>Members save 10% every order</h2>
+        <p>Join rewards and start earning points today.</p>
+      </div>
+      <a class="btn btn-light" href="#newsletter">Join now</a>
+    </div>
+  </section>
+
+  <!-- Best Sellers -->
+  <section id="bestsellers" class="container section-tight">
+    <h2>Best sellers</h2>
+    <div id="productGrid" class="grid grid-4 product-grid"></div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" aria-label="Customer reviews">
+    <div class="container">
+      <h2>What our customers say</h2>
+      <div class="carousel" id="testimonialCarousel">
+        <div class="slide">
+          <p>“My skin has never looked better. The serum is a game‑changer!”</p>
+          <span>— Priya S.</span>
+        </div>
+        <div class="slide">
+          <p>“Fast shipping and gorgeous packaging. 10/10 will reorder.”</p>
+          <span>— Mia R.</span>
+        </div>
+        <div class="slide">
+          <p>“Finally, clean makeup that performs all day.”</p>
+          <span>— Jordan A.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="newsletter">
+    <div class="container newsletter-inner">
+      <div>
+        <h2>Get 15% off your first order</h2>
+        <p>Sign up for updates, launches, and exclusive offers.</p>
+      </div>
+      <form id="newsletterForm" class="newsletter-form" aria-label="Newsletter signup">
+        <input type="email" name="email" placeholder="Your email address" aria-label="Email" required />
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+      <p id="newsletterMsg" class="note" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- Instagram style grid -->
+  <section class="container insta">
+    <h2>Follow @beautyqueens</h2>
+    <div class="grid grid-6">
+      <img src="https://images.unsplash.com/photo-1556228453-efd1a41ef52f?q=80&w=600&auto=format&fit=crop" alt="Gallery 1" />
+      <img src="https://images.unsplash.com/photo-1585325701961-2be8ef0a63ee?q=80&w=600&auto=format&fit=crop" alt="Gallery 2" />
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600&auto=format&fit=crop" alt="Gallery 3" />
+      <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?q=80&w=600&auto=format&fit=crop" alt="Gallery 4" />
+      <img src="https://images.unsplash.com/photo-1512207846876-9c58656721a8?q=80&w=600&auto=format&fit=crop" alt="Gallery 5" />
+      <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=600&auto=format&fit=crop" alt="Gallery 6" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo logo-footer" href="#">BeautyQueens</a>
+        <p>Clean, conscious beauty for every day.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#shop">All Products</a></li>
+          <li><a href="#bestsellers">Best Sellers</a></li>
+          <li><a href="#new">New Arrivals</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Beauty Queens. All rights reserved.</p>
+      <div class="payments">
+        <span>💳</span><span>💳</span><span>💳</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div id="cartOverlay" class="cart-overlay" aria-hidden="true"></div>
+  <aside id="cartDrawer" class="cart-drawer" aria-labelledby="cartTitle" role="dialog" aria-modal="true">
+    <div class="cart-header">
+      <h3 id="cartTitle">Your Cart</h3>
+      <button id="closeCartBtn" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">$0.00</strong>
+      </div>
+      <p class="note">Shipping, taxes, and discounts calculated at checkout.</p>
+      <button id="checkoutBtn" class="btn btn-primary btn-full">Checkout</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+File: styles.css
+:root{
+  --bg:#fff; --text:#121212; --muted:#6b7280; --accent:#f15bb5; --accent-2:#7c3aed;
+  --brand:#f15bb5; --brand-dark:#cf1391; --light:#f9fafb; --border:#e5e7eb;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;color:var(--text);background:var(--bg);line-height:1.5}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{width:min(1200px,90%);margin-inline:auto}
+.section-tight{padding-block:2rem}
+.bar{background:var(--text);color:#fff;text-align:center;font-size:.9rem;padding:.5rem}
+.flash{display:none;background:#d1fae5;color:#065f46;text-align:center;padding:.6rem}
+.flash.show{display:block}
+
+.header{position:sticky;top:0;background:#fff;z-index:50;border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;gap:1rem}
+.logo{font-weight:700;font-size:1.5rem;letter-spacing:.5px}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:.5rem;padding:.4rem .6rem}
+.menu{display:flex;gap:1.2rem;list-style:none;margin:0;padding:0}
+.menu a{color:var(--muted)}
+.menu a:hover{color:var(--text)}
+.header-actions{display:flex;align-items:center;gap:.8rem}
+.search{display:flex;align-items:center;border:1px solid var(--border);border-radius:999px;padding:.2rem .5rem}
+.search input{border:none;outline:none;padding:.4rem .5rem;width:12rem}
+.search button{border:none;background:transparent;cursor:pointer}
+.cart-btn{border:1px solid var(--border);background:#fff;border-radius:.6rem;padding:.4rem .6rem;cursor:pointer;position:relative}
+.badge{position:absolute;top:-8px;right:-8px;background:var(--brand);color:#fff;border-radius:999px;padding:0 .35rem;font-size:.72rem;line-height:1.35}
+
+.hero{padding:2rem 0 3rem;background:linear-gradient(180deg,#fff 0,#fff 55%,#f7f2ff 100%)}
+.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:2rem}
+.hero-copy h1{font-size:3rem;line-height:1.1;margin:0}
+.hero-copy p{color:var(--muted);margin:.8rem 0 1.2rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:.6rem;padding:.8rem 1.1rem;border:1px solid var(--text);cursor:pointer;font-weight:600}
+.btn-primary{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+.btn-outline{background:#fff;border-color:#d1d5db}
+.btn-light{background:#fff;border-color:#fff}
+.btn-full{width:100%}
+.hero-ctas{display:flex;gap:.8rem}
+.hero-art img{border-radius:1rem;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.5rem 0;border-bottom:1px solid var(--border)}
+.feature{display:flex;gap:.6rem;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:.8rem;padding:.8rem;font-weight:500}
+
+.categories{padding:2rem 0}
+.categories h2,.insta h2,.newsletter h2,.testimonials h2{margin:0 0 1rem 0}
+.grid{display:grid;gap:1rem}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-6{grid-template-columns:repeat(6,1fr)}
+.category-card{position:relative;overflow:hidden;border-radius:1rem}
+.category-card img{width:100%;height:220px;object-fit:cover;transition:transform .5s ease}
+.category-card__content{position:absolute;inset:auto 0 0 0;padding:1rem;background:linear-gradient(180deg,transparent,rgba(0,0,0,.6));color:#fff}
+.category-card:hover img{transform:scale(1.05)}
+
+.product-grid{margin-top:1rem}
+.card{border:1px solid var(--border);border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;background:#fff;transition:box-shadow .2s}
+.card:hover{box-shadow:0 10px 28px rgba(0,0,0,.08)}
+.card img{height:240px;object-fit:cover}
+.card-body{padding:1rem;display:grid;gap:.4rem}
+.card-title{font-weight:600}
+.price{font-weight:700}
+.badge-pill{font-size:.75rem;background:#f3f4f6;color:#374151;border-radius:999px;padding:.2rem .6rem;display:inline-block}
+.card-actions{display:flex;gap:.5rem;margin-top:.5rem}
+.qty{display:flex;align-items:center;gap:.4rem;border:1px solid var(--border);border-radius:.5rem;padding:.2rem .4rem}
+.qty button{border:none;background:transparent;cursor:pointer;font-weight:700}
+
+.banner{background:linear-gradient(90deg,#7c3aed,#f15bb5);color:#fff;margin:2rem 0}
+.banner-inner{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 0;gap:1rem}
+.banner .btn-light{color:#7c3aed}
+
+.testimonials{background:#fff;padding:2rem 0}
+.carousel{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:1rem;padding:1.5rem;background:#fff}
+.carousel .slide{min-height:80px}
+.carousel p{font-size:1.1rem;margin:.2rem 0}
+.carousel span{color:var(--muted);font-size:.95rem}
+
+.newsletter{background:#f9fafb;padding:2rem 0;margin:1rem 0}
+.newsletter-inner{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:1rem}
+.newsletter-form{display:flex;gap:.5rem}
+.newsletter-form input{flex:1;border:1px solid var(--border);border-radius:.6rem;padding:.8rem;outline:none}
+.note{color:var(--muted);margin:.3rem 0 0 0}
+
+.insta img{border-radius:.6rem;height:140px;object-fit:cover}
+
+.footer{background:#0a0a0a;color:#e5e5e5;margin-top:2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;padding:2rem 0}
+.footer a{color:#cbd5e1}
+.logo-footer{color:#fff;display:inline-block;margin-bottom:.6rem}
+.socials a{margin-right:.5rem}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1f2937;padding:1rem 0}
+.payments span{margin-left:.4rem}
+
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s;z-index:80}
+.cart-drawer{position:fixed;right:-420px;top:0;height:100vh;width:380px;max-width:95vw;background:#fff;border-left:1px solid var(--border);display:flex;flex-direction:column;z-index:90;transition:right .25s}
+.cart-header{display:flex;align-items:center;justify-content:space-between;padding:1rem;border-bottom:1px solid var(--border)}
+.cart-items{flex:1;overflow:auto;padding:1rem;display:grid;gap:1rem}
+.cart-item{display:grid;grid-template-columns:64px 1fr auto;gap:.8rem;align-items:center}
+.cart-item img{width:64px;height:64px;object-fit:cover;border-radius:.5rem;border:1px solid var(--border)}
+.cart-item h4{margin:0;font-size:.95rem}
+.cart-item .muted{color:var(--muted);font-size:.9rem}
+.cart-footer{padding:1rem;border-top:1px solid var(--border);background:#fff}
+.cart-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+.open .cart-overlay{opacity:1;pointer-events:auto}
+.open .cart-drawer{right:0}
+
+@media (max-width: 960px){
+  .hero-inner{grid-template-columns:1fr}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .newsletter-inner{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .search input{width:9rem}
+  .menu{display:none;position:absolute;right:5%;top:64px;background:#fff;border:1px solid var(--border);border-radius:.6rem;padding:.6rem;flex-direction:column}
+  .nav-toggle{display:inline-flex}
+  .menu.show{display:flex}
+}
+@media (max-width: 560px){
+  .grid-6{grid-template-columns:repeat(3,1fr)}
+  .grid-4{grid-template-columns:1fr}
+  .insta img{height:110px}
+}
+
+File: script.js
+// Product data (replace with your real products/images)
+const products = [
+  {id:'p01', name:'Hydra Glow Serum', price:28, category:'Skincare', tags:['new'], rating:4.8, img:'https://images.unsplash.com/photo-1615022702095-3c45c5a66037?q=80&w=900&auto=format&fit=crop'},
+  {id:'p02', name:'Cloud Moisturizer', price:24, category:'Skincare', tags:['bestseller'], rating:4.7, img:'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=900&auto=format&fit=crop'},
+  {id:'p03', name:'Velvet Lip Tint', price:16, category:'Makeup', tags:['bestseller'], rating:4.6, img:'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=900&auto=format&fit=crop'},
+  {id:'p04', name:'Lash Lift Mascara', price:18, category:'Makeup', tags:['new'], rating:4.5, img:'https://images.unsplash.com/photo-1512207846876-9c58656721a8?q=80&w=900&auto=format&fit=crop'},
+  {id:'p05', name:'Silk Hair Oil', price:22, category:'Hair', tags:['bestseller'], rating:4.7, img:'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=900&auto=format&fit=crop'},
+  {id:'p06', name:'Daily Cleanse', price:14, category:'Skincare', tags:[], rating:4.4, img:'https://images.unsplash.com/photo-1585238342028-4bbc243d3f5c?q=80&w=900&auto=format&fit=crop'},
+  {id:'p07', name:'Pro Brush Set', price:26, category:'Tools', tags:[], rating:4.3, img:'https://images.unsplash.com/photo-1606042282015-9aa79c0a0a89?q=80&w=900&auto=format&fit=crop'},
+  {id:'p08', name:'Tinted SPF 30', price:20, category:'Skincare', tags:['new','bestseller'], rating:4.9, img:'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=900&auto=format&fit=crop'},
+];
+
+const state = {
+  cart: JSON.parse(localStorage.getItem('cart') || '[]'),
+  filter: null,
+  search: ''
+};
+
+const $ = (s, p=document) => p.querySelector(s);
+const $$ = (s, p=document) => [...p.querySelectorAll(s)];
+
+function money(n){ return `$${n.toFixed(2)}`; }
+function saveCart(){ localStorage.setItem('cart', JSON.stringify(state.cart)); }
+function cartCount(){ return state.cart.reduce((n,i)=>n+i.qty,0); }
+function cartSubtotal(){ return state.cart.reduce((n,i)=>n+i.qty*i.price,0); }
+
+function renderProducts(list, mountEl){
+  mountEl.innerHTML = '';
+  list.forEach(p=>{
+    const el = document.createElement('article');
+    el.className = 'card';
+    el.innerHTML = `
+      <img src="${p.img}" alt="${p.name}">
+      <div class="card-body">
+        <div class="card-title">${p.name}</div>
+        <div class="muted">${p.category} ${p.tags.includes('bestseller') ? '• Best Seller' : ''} ${p.tags.includes('new') ? '• New' : ''}</div>
+        <div class="price">${money(p.price)}</div>
+        <div class="card-actions">
+          <button class="btn btn-outline add-to-cart" data-id="${p.id}">Add to Cart</button>
+          <div class="qty" aria-label="Quantity selector">
+            <button class="dec" data-id="${p.id}">−</button>
+            <span class="q" data-id="${p.id}">1</span>
+            <button class="inc" data-id="${p.id}">+</button>
+          </div>
+        </div>
+      </div>
+    `;
+    mountEl.appendChild(el);
+  });
+}
+
+function getQtyInt(id){
+  const span = $(`.q[data-id="${id}"]`);
+  return parseInt(span?.textContent || '1', 10);
+}
+
+function updateHeader(){
+  $('#cartCount').textContent = cartCount();
+  $('#year').textContent = new Date().getFullYear();
+}
+
+function openCart(open=true){
+  document.body.classList.toggle('open', open);
+  $('#cartOverlay').setAttribute('aria-hidden', open ? 'false':'true');
+}
+
+function addToCart(id, qty=1){
+  const p = products.find(x=>x.id===id);
+  if(!p) return;
+  const item = state.cart.find(x=>x.id===id);
+  if(item) item.qty += qty;
+  else state.cart.push({id:p.id, name:p.name, price:p.price, img:p.img, qty});
+  saveCart();
+  renderCart();
+  updateHeader();
+  openCart(true);
+}
+
+function decItem(id){
+  const i = state.cart.find(x=>x.id===id);
+  if(!i) return;
+  i.qty--;
+  if(i.qty<=0) removeItem(id);
+  saveCart(); renderCart(); updateHeader();
+}
+
+function incItem(id){
+  const i = state.cart.find(x=>x.id===id);
+  if(!i) return;
+  i.qty++; saveCart(); renderCart(); updateHeader();
+}
+
+function removeItem(id){
+  state.cart = state.cart.filter(x=>x.id!==id);
+  saveCart(); renderCart(); updateHeader();
+}
+
+function renderCart(){
+  const wrap = $('#cartItems');
+  if(state.cart.length===0){
+    wrap.innerHTML = '<p>Your cart is empty.</p>';
+  } else {
+    wrap.innerHTML = '';
+    state.cart.forEach(i=>{
+      const row = document.createElement('div');
+      row.className = 'cart-item';
+      row.innerHTML = `
+        <img src="${i.img}" alt="${i.name}">
+        <div>
+          <h4>${i.name}</h4>
+          <div class="muted">${money(i.price)}</div>
+          <div class="qty" style="margin-top:.4rem">
+            <button aria-label="Decrease" data-action="dec" data-id="${i.id}">−</button>
+            <span>${i.qty}</span>
+            <button aria-label="Increase" data-action="inc" data-id="${i.id}">+</button>
+            <button aria-label="Remove" data-action="remove" data-id="${i.id}" style="margin-left:.6rem;color:#ef4444">Remove</button>
+          </div>
+        </div>
+        <div><strong>${money(i.qty*i.price)}</strong></div>
+      `;
+      wrap.appendChild(row);
+    });
+  }
+  $('#cartSubtotal').textContent = money(cartSubtotal());
+}
+
+function applyFilters(){
+  let list = [...products];
+  if(state.filter) list = list.filter(p=>p.category===state.filter);
+  if(state.search){
+    const q = state.search.toLowerCase();
+    list = list.filter(p=>p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
+  }
+  return list;
+}
+
+function renderAll(){
+  renderProducts(applyFilters(), $('#productGrid'));
+  renderProducts(products.filter(p=>p.tags.includes('new')), $('#newGrid'));
+  updateHeader();
+}
+
+function readQueryParam(name){
+  const params = new URLSearchParams(location.search);
+  return params.get(name);
+}
+
+function showFlash(msg, kind='success'){
+  const el = $('#flash');
+  el.textContent = msg;
+  el.classList.add('show');
+  el.removeAttribute('hidden');
+  if(kind==='success') el.style.background = '#d1fae5', el.style.color = '#065f46';
+  if(kind==='error') el.style.background = '#fee2e2', el.style.color = '#991b1b';
+  setTimeout(()=>{ el.classList.remove('show'); el.setAttribute('hidden',''); }, 6000);
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderAll();
+  renderCart();
+
+  // Handle checkout results
+  const chk = readQueryParam('checkout');
+  if(chk==='success'){
+    state.cart = [];
+    saveCart(); renderCart(); updateHeader();
+    showFlash('Thank you! Your order was placed.');
+    history.replaceState({}, '', location.pathname);
+  } else if(chk==='cancelled'){
+    showFlash('Checkout canceled. You can complete your order anytime.', 'error');
+    history.replaceState({}, '', location.pathname);
+  }
+
+  // Click handlers
+  document.body.addEventListener('click', async (e)=>{
+    const t = e.target;
+
+    if(t.matches('.add-to-cart')){
+      const id = t.getAttribute('data-id');
+      const qty = getQtyInt(id);
+      addToCart(id, qty);
+    }
+    if(t.matches('.inc')){
+      const id = t.getAttribute('data-id');
+      const span = document.querySelector(`.q[data-id="${id}"]`);
+      span.textContent = String(parseInt(span.textContent,10)+1);
+    }
+    if(t.matches('.dec')){
+      const id = t.getAttribute('data-id');
+      const span = document.querySelector(`.q[data-id="${id}"]`);
+      span.textContent = String(Math.max(1, parseInt(span.textContent,10)-1));
+    }
+
+    if(t.matches('#openCartBtn')) openCart(true);
+    if(t.matches('#closeCartBtn') || t.matches('#cartOverlay')) openCart(false);
+
+    if(t.dataset.action === 'inc') incItem(t.dataset.id);
+    if(t.dataset.action === 'dec') decItem(t.dataset.id);
+    if(t.dataset.action === 'remove') removeItem(t.dataset.id);
+  });
+
+  // Mobile menu
+  const toggle = document.querySelector('.nav-toggle');
+  toggle?.addEventListener('click', ()=>{
+    const menu = document.getElementById('primary-menu');
+    const isOpen = menu.classList.toggle('show');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Search
+  const searchInput = document.getElementById('searchInput');
+  const searchBtn = document.getElementById('searchBtn');
+  function doSearch(){
+    state.search = searchInput.value.trim();
+    renderAll();
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keyup', (e)=>{ if(e.key==='Enter') doSearch(); });
+
+  // Newsletter fake submit
+  const form = document.getElementById('newsletterForm');
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const email = new FormData(form).get('email');
+    document.getElementById('newsletterMsg').textContent = `Thanks! A welcome email was sent to ${email}.`;
+    form.reset();
+  });
+
+  // Testimonials simple rotator
+  const slides = $$('.carousel .slide');
+  let idx = 0;
+  function rotate(){
+    slides.forEach((s,i)=>{ s.style.display = i===idx ? 'block' : 'none'; });
+    idx = (idx+1) % slides.length;
+  }
+  rotate();
+  setInterval(rotate, 4000);
+
+  // Stripe Checkout via Netlify Function
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  checkoutBtn.addEventListener('click', async (e)=>{
+    if(state.cart.length === 0){ showFlash('Your cart is empty.', 'error'); return; }
+    const btn = e.currentTarget;
+    btn.disabled = true; btn.textContent = 'Redirecting...';
+    try{
+      const res = await fetch('/.netlify/functions/create-checkout-session', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          currency: 'usd',
+          items: state.cart.map(i=>({ name:i.name, price:i.price, qty:i.qty, img:i.img })),
+          success_url: `${location.origin}/?checkout=success`,
+          cancel_url: `${location.origin}/?checkout=cancelled`
+        })
+      });
+      const data = await res.json();
+      if(!res.ok || !data.url) throw new Error(data.error || 'Checkout failed');
+      window.location.href = data.url;
+    }catch(err){
+      showFlash(err.message || 'Unable to start checkout', 'error');
+      btn.disabled = false; btn.textContent = 'Checkout';
+    }
+  });
+});
+
+File: netlify.toml
+[build]
+  command = ""
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+
+File: netlify/functions/create-checkout-session.js
+const Stripe = require('stripe');
+
+exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: 'Method Not Allowed' };
+  }
+
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+  let payload = {};
+  try {
+    payload = JSON.parse(event.body || '{}');
+  } catch (e) {
+    return { statusCode: 400, body: 'Invalid JSON' };
+  }
+
+  const items = Array.isArray(payload.items) ? payload.items : [];
+  const currency = (payload.currency || 'usd').toLowerCase();
+  const origin = event.headers.origin || `http://localhost:8888`;
+
+  if (items.length === 0) {
+    return { statusCode: 400, body: 'No items' };
+  }
+
+  // NOTE: For production, validate prices server-side from your own catalog.
+  const line_items = items.map(i => ({
+    quantity: Math.max(1, parseInt(i.qty || 1, 10)),
+    price_data: {
+      currency,
+      unit_amount: Math.round((i.price || 0) * 100),
+      product_data: {
+        name: i.name || 'Item',
+        images: i.img ? [i.img] : undefined
+      }
+    }
+  }));
+
+  try {
+    const session = await stripe.checkout.sessions.create({
+      mode: 'payment',
+      line_items,
+      success_url: payload.success_url || `${origin}/?checkout=success`,
+      cancel_url: payload.cancel_url || `${origin}/?checkout=cancelled`,
+      shipping_address_collection: { allowed_countries: ['US'] },
+      allow_promotion_codes: true
+    });
+
+    return {
+      statusCode: 200,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: session.url })
+    };
+  } catch (err) {
+    return {
+      statusCode: 500,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: err.message })
+    };
+  }
+};
